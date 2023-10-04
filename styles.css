@@ -9,7 +9,8 @@ body {
     height: 250px;
     width: auto;
     background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(237,226,188,1) 100%);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(237,226,188,1) 100%);
+    align-items: center;
 }
 
 #header h1 {
