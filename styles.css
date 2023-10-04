@@ -4,6 +4,26 @@ body {
     margin: 0;
 }
 
+#header {
+    border: 1px solid black;
+    height: 250px;
+    width: auto;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(237,226,188,1) 100%);
+}
+
+#header h1 {
+    margin: 0;
+    font-family: 'Josefin Slab', serif;
+    font-weight: 400;
+    font-size: 64px;
+}
+#header p {
+    margin: 0;
+    font-family: 'Krub', sans-serif;
+    font-size: 24px;
+}
+
 ul li {
     list-style: none;
 }
