@@ -4,8 +4,19 @@ body {
     margin: 0;
 }
 
+ul li {
+    list-style: none;
+}
+
+ul li a{
+    text-decoration: none;
+    font-family: 'Josefin Slab', serif;
+}
+
+/* ID's */
+
 #header {
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     height: 250px;
     width: auto;
     background: rgb(255,255,255);
@@ -15,27 +26,23 @@ body {
 
 #header h1 {
     margin: 0;
+    text-align: center;
     font-family: 'Josefin Slab', serif;
     font-weight: 400;
     font-size: 64px;
+    padding-top: 65px;
 }
 #header p {
     margin: 0;
     font-family: 'Krub', sans-serif;
     font-size: 24px;
-}
-
-ul li {
-    list-style: none;
-}
-
-ul li a{
-    text-decoration: none;
+    text-align: center;
 }
 
 #content {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 #sidebar {
@@ -43,3 +50,5 @@ ul li a{
     height: auto;
     border: 1px solid black;
 }
+
+/* CLASS */
