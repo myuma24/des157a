@@ -2,6 +2,11 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+
+    background-image: url('photos/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 ul {
@@ -35,14 +40,13 @@ div {
 
     height: 250px;
     width: auto;
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(237,226,188,1) 100%);
+    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(237,226,188,1) 100%);
     align-items: center;
 }
 
 #header h1 {
     margin: 0;
-    text-align: center;
+    padding-left: 100px;
     font-family: 'Josefin Slab', serif;
     font-weight: 400;
     font-size: 64px;
@@ -52,7 +56,9 @@ div {
     margin: 0;
     font-family: 'Krub', sans-serif;
     font-size: 24px;
-    text-align: center;
+    
+    padding-left: 100px;
+    
 }
 
 #content {
@@ -64,9 +70,31 @@ div {
 }
 
 #sidebar {
-    width: 10%;
+    width: 100px;
     height: auto;
-    border: 1px solid black;
+
+    border: 3px ;
+    border-style: solid;
+    border-image: linear-gradient(to bottom,rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%) 1;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+#FULLBODY {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    height: auto;
+}
+
+#dot {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 50%;
+    width: auto;
 }
 
 /* CLASS */
@@ -81,16 +109,15 @@ div {
     width: 300px;
 
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(to left,rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%) border-box;
+    linear-gradient(to left,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
+    transition: .2s ease;
 }
 
 .studiosnexperiments:hover {
-    transform: scale(3px);
+    transform: scale(1.1);
 }
-
-
 
 
 .experiments {
@@ -99,9 +126,14 @@ div {
     border-style: solid;
 
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(to left,rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%) border-box;
+    linear-gradient(to left,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
+    transition: .2s ease;
+}
+
+.experiments:hover {
+    transform: scale(1.1);
 }
 
 .rnd {
@@ -110,9 +142,14 @@ div {
     border-style: solid;
     
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(to left,rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%) border-box;
+    linear-gradient(to left,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
+    transition: .2s ease;
+}
+
+.rnd:hover {
+    transform: scale(1.1);
 }
 
 .final {
@@ -121,7 +158,13 @@ div {
     border-style: solid;
     
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(to left,rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%) border-box;
+    linear-gradient(to left,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
+    
+    transition: .2s ease;
+}
+
+.final:hover {
+    transform:scale(1.1);
 }
