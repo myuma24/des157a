@@ -3,10 +3,10 @@ body {
     flex-direction: column;
     margin: 0;
 
-    background-image: url('photos/background.png');
+   /*  background-image: url('photos/background.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
 }
 
 ul {
@@ -108,7 +108,7 @@ div {
     padding: 1em;
     width: 300px;
 
-    background: linear-gradient(to bottom, #EDE2BC, white) padding-box,
+    background: linear-gradient(to bottom, #748390, white) padding-box,
     linear-gradient(to top,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
@@ -125,7 +125,7 @@ div {
     width: 300px;
     border-style: solid;
 
-    background: linear-gradient(to bottom, #EDE2BC, white) padding-box,
+    background: linear-gradient(to bottom, #748390, white) padding-box,
     linear-gradient(to top,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
@@ -141,7 +141,7 @@ div {
     width: 300px;
     border-style: solid;
     
-    background: linear-gradient(to bottom, #EDE2BC, white) padding-box,
+    background: linear-gradient(to bottom, #748390, white) padding-box,
     linear-gradient(to top,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
@@ -157,7 +157,7 @@ div {
     width: 300px;
     border-style: solid;
     
-    background: linear-gradient(to bottom, #EDE2BC, white) padding-box,
+    background: linear-gradient(to bottom, #748390, white) padding-box,
     linear-gradient(to top,rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%) border-box;
     border-radius: 10px;
     border: 3px solid transparent;
