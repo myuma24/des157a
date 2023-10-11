@@ -287,3 +287,47 @@ footer a {
     }
 
 }
+
+/* ----------ANIMATION------------ */
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes grow {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.column .studiosnexperiments, .experiments{
+    animation-name: grow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+  
+.rnd {
+    animation-name: grow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.final {
+    animation-name: grow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
