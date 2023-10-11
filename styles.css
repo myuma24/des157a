@@ -2,9 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: unset;
-    margin-left: 18%;
-    margin-right: 18%;
-
     background-image: url('photos/header.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,14 +53,21 @@ footer {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+footer p {
+    padding-top: 30px;
+}
+
 /*----------------- ID's -------------------*/
 
 #header {
     height: 250px;
     width: auto;
     align-items: center;
-    margin-left: 50px;
-    margin-right: 50px;
+
+    
+    margin-left: 18%;
+    margin-right: 18%;
+
 }
 
 #header h1 {
@@ -72,10 +76,11 @@ footer {
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     font-size: 40;
-    padding-top: 141px;
+    padding-top: 100px;
     text-align: center;
     color: white;
 
+    line-height: 40px;
     letter-spacing: 30px;
 }
 
@@ -95,7 +100,7 @@ footer {
     display: flex;
     flex-direction: row;
     gap:68px;
-    padding-top: 50px;
+    padding-top: 15px;
     justify-content: center;
 }
 
@@ -120,11 +125,12 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 44px;
+    
+    width: 15%;
 }
 
 .studiosnexperiments {
     padding: 1em;
-    width: 239px;
 
     background: rgb(255, 255, 255);
     background: linear-gradient(0deg, rgba(195,34,80,1) 0%, rgba(253,187,45,1) 100%);
@@ -145,7 +151,7 @@ footer {
     margin: unset;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    font-size: 25px ;
+    font-size: 20px ;
     letter-spacing: 3px;
     padding-top: 5px;
 
@@ -155,7 +161,6 @@ footer {
 
 .experiments {
     padding: 1em;
-    width: 239px;
     border-style: solid;
 
     background: rgb(255, 255, 255);
@@ -177,7 +182,7 @@ footer {
     margin: unset;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    font-size: 25px ;
+    font-size: 20px ;
     letter-spacing: 3px;
     padding-top: 5px;
 
@@ -187,7 +192,7 @@ footer {
 
 .rnd {
     padding: 1em;
-    width: 239px;
+    width: 15%;
     border-style: solid;
     
     background: rgb(255, 255, 255);
@@ -209,7 +214,7 @@ footer {
     margin: unset;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    font-size: 25px ;
+    font-size: 20px ;
     letter-spacing: 3px;
     padding-top: 5px;
 
@@ -220,7 +225,7 @@ footer {
 
 .final {
     padding: 1em;
-    width: 239px;
+    width: 15%;
     border-style: solid;
     
     background: rgb(255, 255, 255);
@@ -243,10 +248,38 @@ footer {
     margin: unset;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    font-size: 25px ;
+    font-size: 20px ;
     letter-spacing: 3px;
     padding-top: 5px;
 
     padding-bottom: 5px;
     border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+@media screen and (max-width:900px){
+    #content {
+        display: flex;
+        flex-direction: column;    
+        gap: 44px;
+        padding-top: 40px;
+        justify-content: center;
+        
+        margin-left: 18%;
+        margin-right: 18%;
+
+    }
+
+    .rnd {
+        width:auto;
+    }
+
+    .final {
+        width: auto;
+    }
+    
+
+    .column {
+        width: auto;
+    }
+
 }
