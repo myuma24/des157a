@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    margin: unset;
+
     background-image: url('photos/header.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,6 +55,10 @@ footer {
 
 footer p {
     padding-top: 30px;
+}
+
+footer a {
+    color: white;
 }
 
 /*----------------- ID's -------------------*/
