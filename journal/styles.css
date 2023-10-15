@@ -21,7 +21,14 @@ img {
     width: 125px;
     height: auto;
 }
-
+a {
+    font-weight: bold;
+    color: rgb(57, 97, 173);
+    text-decoration: none;
+}
+a:hover{
+    color: rgb(92, 141, 190);
+}
 /* Classes and ID's */
 
 #title h1{
