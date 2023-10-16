@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+<body>
+    <p id="message"></p>
+    <script>
+/*         var userColor = prompt("Please enter your favorite color", " ");
+        document.body.style.backgroundColor = userColor; */
+
+        var colors = ['red', 'yellow', 'blue'];
+        var randomPick = colors[Math.floor(Math.random() * colors.length)];
+
+        var userColor = prompt("Guess a color, red, yellow, or blue", "");
+
+        if (userColor === randomPick){
+            document.getElementById('message').textContent = 'You are right!';
+        }
+        else {
+            document.getElementById('message').textContent = 'Try again!';
+        }
+    </script>
+    
+</body>
+</html>
