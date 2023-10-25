@@ -1,0 +1,159 @@
+input[type=text] {
+    padding:10px;
+    margin:10px 0;
+    border-radius: 10px;
+    width: 222px;
+}
+
+body {
+    background-color: #BBDFC5;
+    margin-left: 12%; 
+    position: relative;
+    overflow: hidden;
+}
+
+header {
+    font-family: 'Amatic SC', sans-serif;
+    font-weight: 700;
+    font-size: xx-large;
+    color: #2A2D34;
+    margin: unset;
+}
+
+header h1 {
+    margin: unset;
+    padding: 20px;
+}
+
+img { 
+    width: 50%;
+    height: auto;
+}
+
+label {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+input,label {   
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    font-family: 'Raleway', sans-serif;
+}
+
+#myform {
+    background-color: #2A2D34;
+    border-radius: 50px;
+    border: solid 1em white;
+    width: 708px;
+    height: 534px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+}
+
+#submit {
+    width: 30%;
+    align-self: center;
+}
+
+#input {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding: 10px;
+    justify-content: center;
+}
+
+#collumn1 label, #collumn1 input, #collumn2 label, #collumn2 input {
+    display: block;
+}
+
+#ghost {
+    animation: move-up-down 2s ease-in-out infinite;
+    position: absolute;
+    top: 50px; /* position from the top of the container */
+    left: 600px; /* position from the left of the container */
+
+}
+
+#ghost2 {
+    animation: move-down-up 2.5s ease-in-out infinite;
+    position: absolute;
+    top: -100px; /* position from the top of the container */
+    left: 900px; /* position from the left of the container */
+}
+
+#tree {
+    position: absolute;
+    top: -247px;
+    left: 848px;
+}
+
+#midgrass {
+    position: absolute;
+    top: 133px;
+    left: -512px;
+    z-index: 5;
+}
+
+#midgrass1 {
+    position: absolute;
+    z-index: 5;
+    top: -209px;
+    transform: scalex(-1);
+    transform: scaley(-1);
+    left: 946px;
+
+}
+
+#grass {
+    position: absolute;
+    top: 198px;
+    left: 848px;
+    z-index: 5;
+}
+
+#madlib {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 80%;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes move-up-down {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+@keyframes move-down-up {
+    0% {
+      transform: translateY(5);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(5);
+    }
+}
+

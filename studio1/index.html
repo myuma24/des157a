@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Mad Lib Script</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Raleway&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img id = "midgrass" src="images/midgrass.png" alt ="grass">
+    <img id = "midgrass1" src="images/midgrass.png" alt ="grass">
+    <img id = "grass" src="images/edgegrass.png" alt ="grass">
+    <img id = "tree" src="images/tree.png" alt ="tree">
+    <img id ="ghost" src="images/ghost.png" alt ="ghost">
+    <img id = "ghost2" src="images/ghost2.png" alt ="ghost2">
+    <header>
+         <h1>Spirit Chase MadLibs</h1>
+    </header>
+    <main>
+        <!-- You sense a tickle down your spine as you get further and further into the woods. The sun is going down and the sky is getting dim really quickly. Drifting through the seemingly soundless forest, you hear a SOUND. You turn and ACTION in the opposite direction. Tripping against the leaves and branches you begin to fall, grabbing the nearest NOUN you catch yourself. You gasp and breathe feeling a NOUN grip around your BODY PART. Kicking and VERB ending in ING the air into nothingness, you regain your position and begin ACTION again. You spot a small cabin and crawl into the NOUN before slamming the door shut, waiting out the night. You look outside and see PLURAL NOUN floating around with no good explanation. The spirits are here to take your thoughts and your heart is thundering. May god have mercy on your soul. -->
+
+        <form id = "myform">
+            <div id = "input">
+                <div id = "collumn1">
+                    <label for="word1">Provide a Sound</label>
+                    <input type="text" id = "word1">
+
+                    <label for="word2">Provide a Action</label>
+                    <input type="text" id = "word2">
+
+                    <label for="word3">Provide a Noun</label>
+                    <input type="text" id = "word3">
+
+                    <label for="word4">Provide a Noun</label>
+                    <input type="text" id = "word4">
+
+                    <label for="word5">Provide a Body Part</label>
+                    <input type="text" id = "word5">
+                </div>
+                <div id = "collumn2">
+                    <label for="word6">Provide a Verb ending in ING</label>
+                    <input type="text" id = "word6">
+
+                    <label for="word7">Provide a Action</label>
+                    <input type="text" id = "word7">
+
+                    <label for="word8">Provide a Noun</label>
+                    <input type="text" id = "word8">
+
+                    <label for="word9">Provide a Plural Noun</label>
+                    <input type="text" id = "word9">
+
+                    <label for="word10">Provide a Verb Ending in ING</label>
+                    <input type="text" id = "word10">
+                </div>
+            </div>
+
+            <input id = "submit" type="submit" value="submit">
+        </form>
+        
+        <article id="madlib"></article>
+
+    </main>
+</body>
+</html>
