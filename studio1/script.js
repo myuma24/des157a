@@ -29,16 +29,6 @@
 
         const word10 = document.querySelector('#word10').value;
 
-        /* const myText = `This is noun 1: ${noun1} - This is noun 2: ${noun2} - This is the adjective: ${adj} - This is the verb: ${verb}`;
-
-        //empty strings will always render false so the variabels in the if statement must not be empty to render true and log the innerHTML.
-
-        if (noun1 && noun2 && adj && verb){
-            madLib.innerHTML = myText;
-        } else {
-            alert("Please fill out the entire form");
-        }; */
-
         let myText = " ";
 
         if (word1 == ""){
@@ -74,6 +64,7 @@
             document.querySelector('#word10').focus();
         }
         else {
+            /* Change to over lay popup instead of just a text */
             myText = `You sense a tickle down your spine as you get further and further into the woods. The sun is going down and the sky is getting dim really quickly. Drifting through the seemingly soundless forest, you hear a ${word1}. You turn and ${word2} in the opposite direction. Tripping against the leaves and branches you begin to fall, grabbing the nearest ${word3} you catch yourself. You gasp and breathe feeling a ${word4} grip around your ${word5}. Kicking and ${word6} the air into nothingness, you regain your position and begin ${word7} again. You spot a small cabin and crawl into the ${word8} before slamming the door shut, waiting out the night. You look outside and see ${word9} floating around with no good explanation. The spirits are here to take you you thought and your heart is ${word10}. May god have mercy on your soul.`;
 
             const textFields = document.querySelectorAll('input[type=text]');
