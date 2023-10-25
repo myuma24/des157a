@@ -13,6 +13,8 @@ body {
     margin-left: 12%; 
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: auto;
 }
 
 header {
@@ -49,6 +51,7 @@ input,label {
     background-color: #2A2D34;
     border-radius: 50px;
     border: solid 1em white;
+    box-shadow: #2A2D34;
     width: 708px;
     height: 534px;
     display: flex;
@@ -74,11 +77,11 @@ input,label {
     display: block;
 }
 
-#ghost {
+#ghost {    
     animation: move-up-down 2s ease-in-out infinite;
     position: absolute;
-    top: 50px; /* position from the top of the container */
-    left: 600px; /* position from the left of the container */
+    top: 22px;
+    left: 572px;
 
 }
 
@@ -89,10 +92,10 @@ input,label {
     left: 900px; /* position from the left of the container */
 }
 
-#tree {
+#tree {    
     position: absolute;
-    top: -247px;
-    left: 848px;
+    top: -265px;
+    left: 742px;
 }
 
 #midgrass {
@@ -150,13 +153,13 @@ input,label {
 
 @keyframes move-down-up {
     0% {
-      transform: translateY(5);
-    }
-    50% {
       transform: translateY(-30px);
     }
+    50% {
+      transform: translateY(5px);
+    }
     100% {
-      transform: translateY(5);
+      transform: translateY(-30px);
     }
 }
 
