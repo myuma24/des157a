@@ -3,6 +3,9 @@ input[type=text] {
     margin:10px 0;
     border-radius: 10px;
     width: 222px;
+    
+    position: relative;
+    z-index: 6;
 }
 
 body {
