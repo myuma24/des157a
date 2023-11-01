@@ -36,7 +36,50 @@ a {
 a:hover{
     color: rgb(92, 141, 190);
 }
+
+
+article {
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right:30px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+figure {
+    margin: unset;
+    font-family: 'Outfit', sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+
 /* Classes and ID's */
+#row1, #row2 {
+    display: flex;
+    flex-direction: row;
+}
+
+#row1 p,#row2 p {
+    margin: unset;
+}
+
+#row1 p {
+    padding-bottom: 20px;
+}
+
+#row2 {
+    padding-top: 20px;
+}
+
+#partone {
+    padding-left: 2em;
+}
+
+#parttwo {    
+    padding-left: 2em;
+}
 
 #title h1{
     font-size: 70px;
@@ -51,17 +94,18 @@ a:hover{
     margin-top: 10PX;
 }
 
-#article1, #article2, #article3 {
-    border-radius: 25px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right:30px;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
-}
-
 #modalimage {
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
+}
+
+#dad {
+    width: 100%;
+    border-radius: 1em;
+}
+
+#jelly {
+    width: 100%;
+    border-radius: 1em;
 }
