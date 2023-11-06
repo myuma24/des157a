@@ -1,0 +1,35 @@
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+}
+
+.polaroid {    
+    background-color: white;    
+    padding: 0.5vw;
+    padding-bottom: 1.5vw;
+    background: #ece9e6;
+    background: linear-gradient(to bottom, #ece9e6, #fafafa);
+    position: absolute;
+    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+}
+
+.image{
+    width: 5vw;
+    background-size: cover;
+}
+
+body{
+  background-color: black;
+  overflow: hidden;
+}
+
+h1{
+  color: white;
+  position: absolute;
+  top: 1vw;
+  font-family: 'Permanent Marker';
+  font-weight: normal;
+}
