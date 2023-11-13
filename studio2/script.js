@@ -2,28 +2,60 @@
     'use strict'
     console.log('running js');
 
-        
-    var screenWidth;
-    var screenHeight;
+    
+    let frontPolaroid;
+    let pileZIndex = 1;
+    let screenWidth;
+    let screenHeight;
     init();
+
+/*      window.onload = function randomRotation(){
+        var images = document.getElementsByTagName('img');
+        for(var i = 0; i < images.length; i++) {
+            var randomDegrees = Math.random()*180-90;
+            images[i].style.transform = 'rotate(' + randomDegrees + 'deg)';
+        }
+    };
+
+    
+    for(var i = 0; i < images.length; i++) {
+        var position = generateRandomPosition();
+        images[i].style.position = 'absolute';
+        images[i].style.left = position[0] + 'px';
+        images[i].style.top = position[1] + 'px';
+    }
+
+/*     for(var i = 0; i < images.length; i++) {
+        images[i].addEventListener('click', function() {
+            var randomDegrees = Math.random()*20-10;
+            images[i].style.position = 'absolute';
+            images[i].style.transform = 'scale(2.5)';
+        });
+    }; */
+
+/*     function onclick(){
+        var one = document.getElementById('#img1')
+        one.addEventListener('click', function(){
+            one.style.transform = 'scale(2.5)';
+        });
+        onclick();
+
+    }  */
 
     function init()
     {    
         screenWidth = window.innerWidth;
         screenHeight = window.innerHeight;    
-        allImagesToPolaroids();
+        imageStyles();
         document.getElementById('gallery').onmousedown = function(event)
         {
             if(frontPolaroid != null && event.target == this)
             {
-                randomPositionAndRotation(frontPolaroid);      
-                frontPolaroid = null;
+                randomPositionAndRotation(frontPolaroid);
             }
         };
     }
-
-    //adds polaroid divs around the img tags
-    function allImagesToPolaroids()
+    function imageStyles()
     {
         var allImages = document.getElementById('gallery').querySelectorAll('img');
         
@@ -34,7 +66,8 @@
             var polaroidWrapper = document.createElement('div');
             polaroidWrapper.classList.add('polaroid');
             wrap(imageToWrap, polaroidWrapper);
-            //random rotation between ?
+
+            
             randomPositionAndRotation(polaroidWrapper);
             
             polaroidWrapper.onmousedown = function(event)
@@ -43,9 +76,6 @@
             };
         }    
     }
-
-    var frontPolaroid;
-    var pileZIndex = 1;
     function bringToFront(e)
     {
         if(frontPolaroid != null)
@@ -64,6 +94,16 @@
         polaroid.style.zIndex = '100';
         frontPolaroid = polaroid;
     }
+/*     function generateRandomPosition() {
+        
+        screenWidth = window.innerWidth;
+        screenHeight = window.innerHeight;
+
+        var randomX = Math.random()*0.6*screenWidth+0.20*screenWidth;
+        var randomY = Math.random()*0.4*screenHeight+0.1*screenHeight;
+
+        return [randomX,randomY];
+    } */
 
     function randomPositionAndRotation(polaroidDiv)
     {
@@ -76,7 +116,6 @@
         polaroidDiv.style.zIndex = pileZIndex;
         pileZIndex++;
     }
-
     function wrap(el, wrapper) 
     {
         el.parentNode.insertBefore(wrapper, el);

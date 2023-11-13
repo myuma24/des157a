@@ -1,9 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+header {
+  align-self: center;
+  
+
+}
+
 #gallery{
     display: flex;
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
 }
+
 
 .polaroid {    
     background-color: white;    
@@ -24,4 +38,10 @@
 body{
   background-color: black;
   overflow: hidden;
+  margin:unset;
+}
+
+header {
+    color: white; 
+    font-family: "Indie Flower", cursive;
 }
