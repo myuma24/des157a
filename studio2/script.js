@@ -150,9 +150,9 @@
     {
         var randomDegrees = Math.random()*180-90;
         polaroidDiv.style.transform = 'rotate('+randomDegrees+'deg) scale(1.0)';
-        var randomX = Math.random()*0.6*screenWidth+0.20*screenWidth;
+        var randomX = Math.random()*0.5*screenWidth+0.25*screenWidth;
         polaroidDiv.style.left = randomX+'px';
-        var randomY = (Math.random()*0.4*screenHeight+0.1*screenHeight);
+        var randomY = (Math.random()*0.6*screenHeight+0.13*screenHeight);
         polaroidDiv.style.top = randomY+'px';    
         polaroidDiv.style.zIndex = pileZIndex;
         pileZIndex++;

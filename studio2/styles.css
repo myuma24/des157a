@@ -26,10 +26,6 @@
   background-size: cover;
 }
 
-.image-hidden {
-  display: none;
-}
-
 body{
   background-color: black;
   overflow: hidden;
