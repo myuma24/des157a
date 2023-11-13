@@ -1,38 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-* {
-  padding: 0;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-header {
-  align-self: center;
-  
-
-}
-
 #gallery{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
 }
 
 
 .polaroid {    
-    background-color: white;    
-    padding: 0.5vw;
-    padding-bottom: 1.5vw;
-    background: #ece9e6;
-    background: linear-gradient(to bottom, #ece9e6, #fafafa);
-    position: absolute;
-    box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
-    transition: all 0.5s ease;
+  background-color: white;    
+  padding: 0.5vw;
+  padding-bottom: 1.5vw;
+  background: #ece9e6;
+  background: linear-gradient(to bottom, #ece9e6, #fafafa);
+  position: absolute;
+  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.5);
+  transition: all 0.5s ease;
+}
+
+.polaroid:hover {
+  cursor: pointer;
 }
 
 .image{
-    width: 7.5vw;
-    background-size: cover;
+  width: 7.5vw;
+  background-size: cover;
+}
+
+.image-hidden {
+  display: none;
 }
 
 body{
@@ -41,7 +36,21 @@ body{
   margin:unset;
 }
 
-header {
-    color: white; 
-    font-family: "Indie Flower", cursive;
+header h1{
+  color: white; 
+  font-family: "Indie Flower", cursive;
+  font-size: 60px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#text {
+  color: white;
+  font-family: "Indie Flower", cursive;
+  z-index: 10;
+
+  width: 20%;
+  padding-left: 30px;
 }
