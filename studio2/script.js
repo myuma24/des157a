@@ -55,7 +55,6 @@
         screenHeight = window.innerHeight;    
         imageStyles();
 
-
         document.getElementById('gallery').onmousedown = function(event)
         {
             if(frontPolaroid != null && event.target == this)
@@ -65,31 +64,6 @@
         };
     }
     
-/*     function imageStyles() {
-        var allImages = document.getElementById('gallery').querySelectorAll('img');
-        let textDiv = document.getElementById("text");
-    
-        for(var i = 0; i < allImages.length; i++) {
-            var imageToWrap = allImages[i];
-            imageToWrap.classList.add('image');
-            var polaroidWrapper = document.createElement('div');
-            polaroidWrapper.classList.add('polaroid');
-            wrap(imageToWrap, polaroidWrapper);
-            generateRandomPosition(polaroidWrapper);
-    
-            polaroidWrapper.onmousedown = function(event) {
-                bringToFront(event);
-            };
-    
-            // Add the click event listener to the polaroidWrapper
-            polaroidWrapper.addEventListener('click', function(event){
-                event.preventDefault();
-                let myText = `Image ${i+1} was clicked`;
-                textDiv.innerHTML = myText;
-            });
-        }
-    } */
-
     function imageStyles() {
         var allImages = document.getElementById('gallery').querySelectorAll('img');
         let textDiv = document.getElementById("text");
@@ -117,8 +91,10 @@
                     event.preventDefault();
                     // Use the captured index to select the corresponding text
                     let myText = imageTexts[index];
+                    console.log('index:', index); // log the index
+                    console.log('myText:', myText); // log the text
                     // Delay setting the text to ensure it is rendered consistently
-                    setTimeout(function() {
+                    requestAnimationFrame(function() {
                         textDiv.innerHTML = myText;
                     }, 0);
                 });
@@ -155,7 +131,6 @@
         var randomY = (Math.random()*0.6*screenHeight+0.13*screenHeight);
         polaroidDiv.style.top = randomY+'px';    
         polaroidDiv.style.zIndex = pileZIndex;
-        pileZIndex++;
     }
     function wrap(el, wrapper) 
     {
