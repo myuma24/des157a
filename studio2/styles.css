@@ -1,3 +1,30 @@
+
+body{
+  background-color: black;
+  overflow: hidden;
+  margin:unset;
+}
+
+header h1{
+  color: white; 
+  font-family: "Indie Flower", cursive;
+  font-size: 60px;
+  font-weight: lighter;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+#text {
+  color: white;
+  font-family: "Indie Flower", cursive;
+  z-index: 10;
+
+  width: 20%;
+  padding-left: 30px;
+}
+
 #gallery{
   width: 100vw;
   height: 100vh;
@@ -8,9 +35,6 @@
   flex-direction: row;
 }
 
-p {
-  display: hidden;
-}
 
 .polaroid {    
   background-color: white;    
@@ -30,29 +54,4 @@ p {
 .image{
   width: 7.5vw;
   background-size: cover;
-}
-
-body{
-  background-color: black;
-  overflow: hidden;
-  margin:unset;
-}
-
-header h1{
-  color: white; 
-  font-family: "Indie Flower", cursive;
-  font-size: 60px;
-  font-weight: lighter;
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-#text {
-  color: white;
-  font-family: "Indie Flower", cursive;
-  z-index: 10;
-
-  width: 20%;
-  padding-left: 30px;
 }
