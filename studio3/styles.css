@@ -1,0 +1,53 @@
+body {
+    background-color: #769184;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button { 
+    padding: 10px;
+}
+
+div {
+    padding: 20px;
+}
+
+img {
+    border-style: none;
+    width: 487px;
+}
+
+#goose{
+    position: absolute;
+    top: -36px;
+    left: -14px;
+}
+
+#pigeon {
+    position: absolute;
+    top: 219px;
+    left: 1156px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 
+
+#gamecontrol, #score {
+    background-color: aliceblue;
+}
+
+#game {
+    background-color:#eaeaea;
+}
+#actions {
+    background-color: silver;
+} */
