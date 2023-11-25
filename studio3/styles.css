@@ -1,4 +1,8 @@
 body {
+    background-image: url("images/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;;
     background-color: #769184;
     display: flex;
     justify-content: center;
@@ -8,8 +12,9 @@ body {
     overflow: hidden;
 }
 
-button { 
+button {
     padding: 10px;
+    width: 150px;
 }
 
 div {
@@ -40,15 +45,6 @@ div {
     height: 100vh;
 }
 
-/* 
-
-#gamecontrol, #score {
-    background-color: aliceblue;
-}
-
-#game {
-    background-color:#eaeaea;
-}
 #actions {
-    background-color: silver;
-} */
+    display: none;
+}

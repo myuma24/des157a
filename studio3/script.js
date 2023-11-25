@@ -2,122 +2,76 @@
     'use strict'
     console.log('reading JS');
 
-    /* //This gets the current player: 
-    gameData.players[gameData.index]
-
-    //This gets the first die and the second die: 
-    gameData.dice[gameData.roll1-1]
-    gameData.dice[gameData.roll2-1]
-
-    //This gets the score of the current player: 
-    gameData.score[gameData.index]
-
-    //This gets the index, or turn
-    gameData.index
-
-    //This gets the individual dice values and the added dice value
-    gameData.roll1
-    gameData.roll2
-    gameData.rollSum
-
-    //This gets the winning threshold
-    gameData.rollSum */
+    const bttns = document.querySelectorAll("#actions button");
+    const battle = document.querySelector("#battle");
+    const atcks = ["Slice", "Jab", "Cut", "Swing"];
 
     
-    const startGame = document.querySelector('#startgame');
-    const gameControl = document.querySelector('#gamecontrol');
-    const game = document.querySelector('#game');
-    const score = document.querySelector('#score');
-    const actionArea = document.querySelector('#actions');
 
-    const gameData = {
-        dice: ['images/1die.jpg', 'images/2die.jpg', 'images/3die.jpg', 'images/4die.jpg', 'images/5die.jpg', 'images/6die.jpg'],
-        players: ['player 1', 'player 2'],
-        score: [0, 0],
-        roll1: 0,
-        roll2: 0,
-        rollSum: 0,
-        index: 0,
-        gameEnd: 29
-    };
-
-    startGame.addEventListener("click", function(){
-        gameData.index = Math.round(Math.random());
-        console.log(gameData.index);
-        gameControl.innerHTML = '<h2>The Game Has Started</h2>';
-        gameControl.innerHTML += '<button id = "quit">Wanna Quit?</button>';
-
-        document.getElementById('quit').addEventListener("click", function(){
-            location.reload();
-        });
-
-        setUpTurn();
+    document.getElementById('startgame').addEventListener('click', function() {
+        document.getElementById('actions').style.display = 'block';
+        document.getElementById('gamecontrol').style.display = 'none';
     });
 
-    function setUpTurn(){
-        game.innerHTML = `<p> Roll the dice for the ${gameData.players[gameData.index]
-        }</p>`;
-        actionArea.innerHTML = '<button id = "roll">Roll the Dice</button>';
-        document.getElementById('roll').addEventListener('click', function(){
-            throwDice();
-        });
-    }
+    //If hitOrMiss is true, the attack hits and a random amount of damage is inflicted. If hitOrMiss is false, the attack misses.
+    let player1Score = 30;
+    let player2Score = 30;
+    let player1Turn = true; // start with player 1's turn
 
-    function throwDice(){
-        actionArea.innerHTML = '';
-        gameData.roll1 = Math.floor(Math.random()*6)+1;
-        gameData.roll2 = Math.floor(Math.random()*6)+1;
-        game.innerHTML = `<p> Roll the dice for the ${gameData.players[gameData.index]}</p>`;
-        game.innerHTML += `<img src = "${gameData.dice[gameData.roll1-1]}">
-        <img src = "${gameData.dice[gameData.roll2-1]}">`;
-        gameData.rollSum = gameData.roll1 + gameData.roll2;
-
-        if (gameData.rollSum === 2 ){
-            game.innerHTML += "<p>Snake eyes were rolled, your score has been reset to 0.</p>";
-            gameData.score[gameData.index] = 0;
-            gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-
-            showCurrentScore();
-            setTimeout(setUpTurn, 2000);
-        }
-        else if (gameData.roll1 === 1 || gameData.roll2 === 1){
-            gameData.index ? (gameData.index = 0):(gameData.index = 1);
-            game.innerHTML += `<p>Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
-            setTimeout(setUpTurn,2000);
-        }
-        else {
-            gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
-            actionArea.innerHTML = '<button id = "rollagain">Roll Again</button> or <button id = "pass">Pass Turn</button>';
-
-            document.getElementById('rollagain').addEventListener('click', function(){
-                setUpTurn();
-            });
-            document.getElementById('pass').addEventListener('click',function(){
-                gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-                setUpTurn();
-            });
-            //check winning condition
-            checkWinningCondition();
-
-        }
-
-    }
-
-    function checkWinningCondition(){
-        if(gameData.score[gameData.index] > gameData.gameEnd){
-            score.innerHTML = `<h1>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
-            actionArea.innerHTML = '';
-            document.getElementById('quit').innerHTML = "Start a new game?";
+    document.getElementById('restart').addEventListener('click', function() {
+        // Reset the game state
+            location.reload();
+    });
+    
+    const attackFunction = function (event) {
+        if (player1Turn) {
+            const spell = event.target.innerHTML;
+            const hitOrMiss = Math.random() < 0.5; // 50% chance to hit or miss
+            battle.innerHTML = `Player 1 chose ${spell}.`;
+    
+            if (hitOrMiss) {
+                const Power = Math.ceil(Math.random() * 10);
+                player2Score -= Power; // subtract Power from player2's score
+                document.getElementById('player2Score').innerHTML = `Player 2 Health: ${player2Score}`;
+                battle.innerHTML += `<br> Hit! Minus ${Power} HP`;
+            }
+            else {
+                battle.innerHTML += "<br> Attack missed, switching turns.";
+                player1Turn = !player1Turn; // switch turns
+            }
         } else {
-            showCurrentScore();
+            const spell = event.target.innerHTML;
+            const hitOrMiss = Math.random() < 0.5; // 50% chance to hit or miss
+            battle.innerHTML = `Player 2 chose ${spell}.`;
+    
+            if (hitOrMiss) {
+                const Power = Math.ceil(Math.random() * 10);
+                player1Score -= Power; // subtract Power from player1's score
+                document.getElementById('player1Score').innerHTML = `Player 1 Health: ${player1Score}`;
+                battle.innerHTML += `<br> Hit! Minus ${Power} HP`;
+            }
+            else {
+                battle.innerHTML += "<br> Attack missed, switching turns.";
+                player1Turn = !player1Turn; // switch turns
+            }
         }
+    
+        if (player1Score <= 0) {
+            battle.innerHTML += `<br> Player 2 wins!`;
+            // End the game
+            this.removeEventListener("click", attackFunction);
+            // Show the restart button
+            document.getElementById('restart').style.display = 'block';
+        } else if (player2Score <= 0) {
+            battle.innerHTML += `<br> Player 1 wins!`;
+            // End the game
+            this.removeEventListener("click", attackFunction);
+            // Show the restart button
+            document.getElementById('restart').style.display = 'block';
+        }    
     };
-
-    function showCurrentScore(){  
-        score.innerHTML = `<p>The score is currently ${gameData.players[0]}<strong>
-        ${gameData.score[0]}</strong> and ${gameData.players[1]}<strong> ${gameData.score[1]}</strong></p>`;
-    };
-
-
-
+        
+    for (const eachBtn of bttns) {
+        eachBtn.addEventListener("click", attackFunction);
+    }
 })();
