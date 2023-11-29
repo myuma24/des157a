@@ -62,7 +62,7 @@ span {
 }
 
 #startgame:active span {
-    translate: none;
+    transform: none;
 }
 
 #startgame span {
@@ -70,10 +70,9 @@ span {
     border-radius: inherit;
     background-color: #b4e3e4;
     padding: 1rem 2rem;
-
-    translate: 0.25rem -0.25rem;
+    transform: translate(0.25rem, -0.25rem);
     border: 2px solid #2a6579;
-    transition: translate 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 250ms;
+    transition: transform 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 250ms;
 }
 
 #rules {
@@ -91,7 +90,7 @@ span {
 }
 
 #rules:active span {
-    translate: none;
+    transform: none;
 }
 
 #rules span {
@@ -99,10 +98,9 @@ span {
     border-radius: inherit;
     background-color: #b4e3e4;
     padding: 1rem 2rem;
-
-    translate: 0.25rem -0.25rem;
+    transform: translate(0.25rem, -0.25rem);
     border: 2px solid #2a6579;
-    transition: translate 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 250ms;
+    transition: transform 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 250ms;
 }
 
 #other {
@@ -120,7 +118,7 @@ span {
 }
 
 #other:active span {
-    translate: none;
+    transform: none;
 }
 
 #other span {
@@ -128,12 +126,11 @@ span {
     border-radius: inherit;
     background-color: #b4e3e4;
     padding: 1rem 2rem;
-
-    translate: 0.25rem -0.25rem;
+    transform: translate(0.25rem, -0.25rem);
     border: 2px solid #2a6579;
-    transition: translate 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 250ms;
-}
-
+    transition: transform 100ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 250ms;
+ }
+ 
 .bird {
     background-image: url('images/Bird.gif');
     background-size: auto 100%;
