@@ -2,10 +2,6 @@
     'use strict'
     console.log('reading JS');
 
-    const atk = document.querySelectorAll(".attacks");
-    const heal = document.querySelector(".heal");
-    const battle = document.querySelector("#battle");
-
     document.getElementById('startgame').addEventListener('click', function() {
         document.getElementById('gamecontrol').style.display = 'none';
         document.getElementById('pick-character').style.display = 'block';
@@ -38,8 +34,7 @@
      }
     };
 
-    /* PICK CHARACTER VALUE? */
-
+/* PICK CHARACTER VALUE? */
     const select = document.querySelector("#other");
     const char1 = document.querySelector("#char1");
     const char2 = document.querySelector("#char2");
@@ -72,19 +67,17 @@
         document.getElementById('healthbars').style.display = 'flex';
         document.getElementById('characterpick').style.display = 'flex'
         document.getElementById('pick-character').style.display = 'none';
-        document.getElementById('container').style.display = 'none';
     });
 
+/* ATTACK FUNCTIONS */
 
+    const atk = document.querySelectorAll(".attacks");
+    const heal = document.querySelector(".heal");
+    const battle = document.querySelector("#battle");
 
     let player1Score = 30;
     let player2Score = 30;
     let player1Turn = true; // start with player 1's turn
-
-    document.getElementById('restart').addEventListener('click', function() {
-        // Reset the game state
-            location.reload();
-    });
     
     const attackFunction = function (event) {
         if (player1Turn) {
@@ -99,7 +92,7 @@
                 battle.innerHTML += `<br> Hit! Minus ${Power} HP`;
             }
             else {
-                battle.innerHTML += "<br> Attack missed, switching turns.";
+                battle.innerHTML += "<br> Attack missed, next players turn.";
                 player1Turn = !player1Turn; // switch turns
             }
         } else {
@@ -124,14 +117,19 @@
             // End the game
             this.removeEventListener("click", attackFunction);
             // Show the restart button
-            document.getElementById('restart').style.display = 'block';
+            document.getElementById('actions').innerHTML = `<p id="battle"> Player 2 wins!</p><button id="restart">Restart Game</button>`;
         } else if (player2Score <= 0) {
-            battle.innerHTML += `<br> Player 1 wins!`;
             // End the game
             this.removeEventListener("click", attackFunction);
             // Show the restart button
-            document.getElementById('restart').style.display = 'block';
-        }    
+            document.getElementById('actions').innerHTML = `<p id="battle"> Player 1 wins!</p><button id="restart">Restart Game</button>`;
+        }  
+        
+            
+        document.getElementById('restart').addEventListener('click', function() {
+            // Reset the game state
+                location.reload();
+        });
     };
         
 
@@ -152,7 +150,7 @@
                 battle.innerHTML += `<br> Healed ${Power} HP`;
             }
             else {
-                battle.innerHTML += "<br> Heal interupted, switching turns.";
+                battle.innerHTML += "<br> Heal interupted, next players turn.";
                 player1Turn = !player1Turn; // switch turns
             }
         } else {
@@ -167,7 +165,7 @@
                 battle.innerHTML += `<br> Healed ${Power} HP`;
             }
             else {
-                battle.innerHTML += "<br> Heal interupted, switching turns.";
+                battle.innerHTML += "<br> Heal interupted, next players turn.";
                 player1Turn = !player1Turn; // switch turns
             }
         }
