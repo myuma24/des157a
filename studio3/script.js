@@ -43,7 +43,7 @@
         event.preventDefault();
         const selectedvalue = document.querySelector('#playerone').value;
         const selectedvalue2 = document.querySelector('#playertwo').value;
-
+        // Compares the values, if both players pick the same character, alert will appear. 
         if (selectedvalue === selectedvalue2) {
             alert("Please pick two different characters");
             return;
@@ -54,7 +54,6 @@
         } else {
             char1.innerHTML = '<img src = "images/goat.PNG" alt "goat" id = "char1" style = "transform: scaleX(-1);">';
         }
-
         if (selectedvalue2 === "butch" ){
             char2.innerHTML = '<img src = "images/butch.PNG" alt "butch" id = "char1">';
         } else if (selectedvalue2 == "pidge") {
@@ -132,15 +131,15 @@
         });
     };
         
-
+    // Makes attack function do its thing when button of atk is clicked :D
     for (const eachBtn of atk) {
         eachBtn.addEventListener("click", attackFunction);
     }
-
+    // This is the healing version of the attack function, instead of subtracting health it adds health, also has a higher chances of success
     const healing = function (event) {
         if (player1Turn) {
             const spell = event.target.innerHTML;
-            const hitOrMiss = Math.random() < 0.5; // 50% chance to hit or miss
+            const hitOrMiss = Math.random() < 0.37 // 70% chance for Math.random to generate a number less than 0.7
             battle.innerHTML = `Player 1 chose ${spell}.`;
     
             if (hitOrMiss) {
@@ -155,7 +154,7 @@
             }
         } else {
             const spell = event.target.innerHTML;
-            const hitOrMiss = Math.random() < 0.5; // 50% chance to hit or miss
+            const hitOrMiss = Math.random() < 0.7; // 70% chance for Math.random to generate a number less than 0.7
             battle.innerHTML = `Player 2 chose ${spell}.`;
     
             if (hitOrMiss) {

@@ -3,7 +3,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    ;
     background-color: #769184;
     display: flex;
     justify-content: center;
@@ -11,6 +10,8 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 button {
