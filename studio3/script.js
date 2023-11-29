@@ -139,12 +139,12 @@
     const healing = function (event) {
         if (player1Turn) {
             const spell = event.target.innerHTML;
-            const hitOrMiss = Math.random() < 0.37 // 70% chance for Math.random to generate a number less than 0.7
+            const hitOrMiss = Math.random() < 0.7 // 70% chance for Math.random to generate a number less than 0.7
             battle.innerHTML = `Player 1 chose ${spell}.`;
     
             if (hitOrMiss) {
                 const Power = Math.ceil(Math.random() * 3);
-                player1Score += Power; // subtract Power from player2's score
+                player1Score += Power; // add Power from player2's score
                 document.getElementById('player1Score').innerHTML = `Player 1 Health: ${player1Score}`;
                 battle.innerHTML += `<br> Healed ${Power} HP`;
             }
@@ -159,7 +159,7 @@
     
             if (hitOrMiss) {
                 const Power = Math.ceil(Math.random() * 3);
-                player2Score += Power; // subtract Power from player1's score
+                player2Score += Power; // add Power from player1's score
                 document.getElementById('player2Score').innerHTML = `Player 2 Health: ${player2Score}`;
                 battle.innerHTML += `<br> Healed ${Power} HP`;
             }
