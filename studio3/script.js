@@ -15,24 +15,26 @@
     var span = document.getElementsByClassName("close")[0];
 
     rulesbutton.onclick = function() {
-     modal.classList.add("show");
+        playClick();
+        modal.classList.add("show");
     } //on click adds the class show that makes the overlay appear
     //below are the different ways a user can "exit" the overlay
     span.onclick = function() {
-     modal.classList.remove("show");
+        playClick();
+        modal.classList.remove("show");
     }
     
     window.onclick = function(event) {
-     if (event.target == modal) {
-       modal.classList.remove("show");
-     }
+        if (event.target == modal) {
+            modal.classList.remove("show");
+        }
     }
     
     document.onkeydown = function(evt) {
-     evt = evt || window.event;
-     if (evt.keyCode == 27) {
-       modal.classList.remove("show");
-     }
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+        modal.classList.remove("show");
+        }
     };
 
 /* PICK CHARACTER VALUE? */
