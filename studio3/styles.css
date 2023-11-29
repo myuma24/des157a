@@ -238,6 +238,10 @@ span {
     height: auto;
 }
 
+#char2 {
+    z-index: 2;
+}
+
 @keyframes fly-right {
     0% {
         transform: scale(0.3) translateX(-10vw);

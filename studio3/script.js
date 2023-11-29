@@ -4,7 +4,7 @@
 
     document.getElementById('startgame').addEventListener('click', function() {
         playClick();
-        document.getElementById('gamecontrol').style.display = 'none';
+        document.getElementById('container').style.display = 'none';
         document.getElementById('pick-character').style.display = 'block';
     });
 
@@ -116,7 +116,6 @@
         }
     
         if (player1Score <= 0) {
-            battle.innerHTML += `<br> Player 2 wins!`;
             // End the game
             this.removeEventListener("click", attackFunction);
             // Show the restart button
