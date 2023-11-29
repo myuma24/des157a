@@ -1,51 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GooseVPigeon</title>
+    <title>Bird Fight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 	<link href="styles.css" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <div id = "goose"><img src = "images/goose.png" alt="goose" id = "gooseimg"></div>
-    <div id = "pigeon" alt = "pigeon" id = "pigeonimg"><img src = "images/pigeon.png"></div>
+    <!-- FLYING BIRD -->
+    <div class="bird-container">
+        <div class="bird"></div>
+    </div>
 
-
+    <!-- BEGIN GAME + RULES -->
     <div class="container">
         <div id="gamecontrol">
-            <h2>Start a Game</h2>
-            <button id="startgame">Play</button>
+            <a href = "#" id="startgame">
+                <span>Begin Game!</span>
+            </a>
+            <a href = "#" id="rules">
+                <span>Rules</span>
+            </a>
         </div>
     </div>
-    
-    <button id="restart" style="display: none;">Restart Game</button>
+    <div id="rulesModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+            <div id = "rulesdiv">
+                <h2>Game Rules</h2>
+                <ul>
+                    <li>This game is designed for two players exclusively.</li>
+                    <li>Upon entering the game, each player must select one of three distinct characters.</li>
+                    <li>Every character comes with a unique set of skills and attack perks that can be viewed in the character selection screen.</li>
+                    <li>A player's turn persists until they either miss a skill or a healing spell proves unsuccessful.</li>
+                    <li>Victory is achieved when a player's opponent reaches zero health.</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+
+    <!-- CHARACTER SELECTION -->
+    <div id = "pick-character" style = "display: none;">
+        <div id = "character">
+            <div class="bounce">
+                <p class = "name">Butch</p>
+                <img class = "birds" id = "butch" src = "images/butch.PNG">
+                <p class = "description">
+                    Butch the goose, armed with his trusty butcher's knife, a family heirloom passed down through generations, can conquer any obstacle. Successful attacks deal an extra 5-10 damage.
+                </p>
+            </div>
+            <div class="bounce">
+                <p class = "name">Pidgy</p>
+                <img class = "birds" id = "pidgy" src = "images/pigdy.PNG">
+                <p class = "description">
+                    Pidgey the pidgeon grew up on the streets, learning to survive on scraps since she was just a small hatchling. Endowed with quick wit and nimble hands, she wields two butter knives adeptly for both defense and offense. Her attacks and healing maneuvers boast a 20% increase in success.
+                </p>
+            </div>
+            <div class="bounce">
+                <p class = "name">Goat</p>
+                <img class = "birds" id = "goat" src = "images/goat.PNG">
+                <p class = "description">
+                    Goat the bird(?) is an enigmatic character; not much is known about him except for his distinctive goat eyes, making him truly one of a kind. Armed with a baseball bat and operating on just one brain cell, he possesses a unique blend of mystery and simplicity. Goat has a 5% chance that his attacks deliver a deadly, game ending, blow.
+                    
+                </p>
+            </div>
+        </div>
+
+        <div id = "selections">
+            <h1>Please choose a character!</h1>
+            <form id = "1myform">
+                <label>Player 1:</label>
+                <select id="playerone">
+                    <option value="butch">Butch</option>
+                    <option value="pidge">Pidgy</option>
+                    <option value="goat">Goat</option>
+                </select>
+            </form>
+            
+            <form id = "2myform">
+                <label>Player 2:</label>
+                <select id="playertwo">
+                    <option value="butch">Butch</option>
+                    <option value="pidge">Pidgy</option>
+                    <option value="goat">Goat</option>
+                </select>
+            </form>
+            
+            <a href = "#" id="other">
+                <span>Begin</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ACTUAL GAME -->
+    <div id = "thefight">
+        <div id="healthbars" style = "display: none;">
+            <div id="player1Score">Player 1 Health: 30</div>
+            <div id="player2Score">Player 2 Health: 30</div>
+        </div>
+        <div id = "characterpick"  style = "display: none;">
+            <div id = "char1"> </div>
+            <div id = "char2"> </div>
+        </div>
+    </div>
 
     <div id="actions" style="display: none;">
         <button class = "attacks">Slice</button>
-        <button class = "attacks">Jab</button>
-        <button class = "attacks">Cut</button>
         <button class = "attacks">Swing</button>
-        <p id="battle">Choose a Attack</p>
+        <button class = "heal">Heal</button>
+        <p id="battle">Choose a Skill</p>
     </div>
 
-    <div id="player1Score">Player 1 Health: 30</div>
-    <div id="player2Score">Player 2 Health: 30</div>
-</body>
-
-    <!--     <h1>Game of PIG</h1>
-    <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
-    <p>Oh, and if you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
-
-    <div id="gamecontrol">
-        <h2>Start a Game</h2>
-        <button id="startgame">Randomly Pick the First Player, and Start the Game</button>
-    </div>
-
-    <div id="game"></div>
-    <div id="actions"></div>
-    <div id="score"></div> -->
-    
+    <button id="restart" style="display: none;">Restart Game</button>
 </body>
 </html>
