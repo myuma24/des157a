@@ -3,6 +3,7 @@
     console.log('reading JS');
 
     document.getElementById('startgame').addEventListener('click', function() {
+        playClick();
         document.getElementById('gamecontrol').style.display = 'none';
         document.getElementById('pick-character').style.display = 'block';
     });
@@ -41,6 +42,7 @@
 
     select.addEventListener('click', function(event){
         event.preventDefault();
+        playClick();
         const selectedvalue = document.querySelector('#playerone').value;
         const selectedvalue2 = document.querySelector('#playertwo').value;
         // Compares the values, if both players pick the same character, alert will appear. 
@@ -134,6 +136,7 @@
     // Makes attack function do its thing when button of atk is clicked :D
     for (const eachBtn of atk) {
         eachBtn.addEventListener("click", attackFunction);
+        playClick();
     }
     // This is the healing version of the attack function, instead of subtracting health it adds health, also has a higher chances of success
     const healing = function (event) {
@@ -171,5 +174,11 @@
     }
 
     heal.addEventListener("click", healing);
+
+    function playClick(){
+        const audio = new Audio('sounds/click.mp3');
+        audio.play();
+    }
+     
 
 })();
