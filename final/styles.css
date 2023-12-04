@@ -24,10 +24,6 @@ footer {
     text-align: center;
 }
 
-#logo {
-    width: 125px;
-    height: auto;
-}
 a {
     font-weight: bold;
     color: rgb(57, 97, 173);
@@ -52,4 +48,17 @@ figure {
     font-family: 'Outfit', sans-serif;
     font-weight: bold;
     font-size: smaller;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+#logo {
+    width: 125px;
+    height: auto;
+    border: none;
 }

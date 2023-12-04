@@ -58,7 +58,7 @@
             </div>
             <div class="bounce">
                 <p class = "name">Pidgy</p>
-                <img class = "birds" id = "pidgy" src = "images/pigdy.PNG" alt = "pidge">
+                <img class = "birds" id = "pidgy" src = "images/pidge.PNG" alt = "pidge">
                 <p class = "description">
                     Pidgey the pidgeon grew up on the streets, learning to survive on scraps since she was just a small hatchling. Endowed with quick wit and nimble hands, she wields two butter knives adeptly for both defense and offense. <!-- Her attacks and healing maneuvers boast a 20% increase in success. -->
                 </p>
@@ -105,6 +105,14 @@
             <div id="player1Score">Player 1 Health: 30</div>
             <div id="player2Score">Player 2 Health: 30</div>
         </div>
+        <div id = "healths" style = "display: none;">
+            <div id = "healthwhite1">
+                <div id = "health1"></div>
+            </div>
+            <div id = "healthwhite2">
+                <div id = "health2"></div>
+            </div>
+        </div>
         <div id = "characterpick"  style = "display: none;">
             <div id = "char1"> </div>
             <div id = "char2"> </div>
@@ -112,11 +120,9 @@
     </div>
 
     <div id="actions" style="display: none;">
-        <button class = "attacks">Slice</button>
-        <button class = "attacks">Swing</button>
+        <button class = "attacks">Attack</button>
         <button class = "heal">Heal</button>
-        <p id="battle">Player 1, please choose a Skill</p>
+        <p id="battle"><strong>Player 1</strong>, please choose a Skill</p>
     </div>
-    <!-- <button id="restart" style="display: none;">Restart Game</button> -->
 </body>
 </html>
