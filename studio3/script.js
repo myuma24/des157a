@@ -6,6 +6,7 @@
         playClick();
         document.getElementById('container').style.display = 'none';
         document.getElementById('pick-character').style.display = 'block';
+        document.getElementById('homeBirds').style.display = 'none';
     });
 
 

@@ -433,4 +433,37 @@ select {
     font: inherit;
     line-height: 1.5em;
     padding: 0.5em 1em 0.5em 1em;
-  }
+}
+
+#bird1 {
+    position: absolute;
+    width: 275px;
+    height: auto;
+    top: 9px;
+    left: 399px;
+    animation: bounce 2s infinite;
+}
+
+#bird2 {
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 345px;
+    right: 373px;
+    animation: bounce 2.5s infinite;
+}
+
+button {
+    border: 3px #2a6579 solid;
+    border-radius: 5px;
+    background: #a3d3d9;
+}
+
+button:hover {
+    background-color: #eaf9fb;
+    cursor: pointer;
+}
+
+select:hover {
+    cursor: pointer;
+}
